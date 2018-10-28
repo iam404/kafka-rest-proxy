@@ -1,0 +1,10 @@
+batch.size=163840
+auto.commit.interval.ms=10
+linger.ms=0
+buffer.memory=335544320
+connections.max.idle.ms=54000
+key.serializer=org.apache.kafka.common.serialization.StringSerializer
+value.serializer=org.apache.kafka.common.serialization.StringSerializer
+#ssl.keystore.location=/opt/kafka/config/tls/kafka.server.keystore.jks
+#ssl.truststore.location=/opt/kafka/config/tls/kafka.client.truststore.jks
+block.on.buffer.full=true

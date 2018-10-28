@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30" status="debug">
+
+    <Properties>
+        <Property name="filename-all">logs/kafka-rest-proxy.log</Property>
+        <Property name="filename-s3-error">logs/s3-error.log</Property>
+        <Property name="filename-kafka-error">logs/kafka-error.log</Property>
+        <Property name="filename-es-error">logs/es-error.log</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- the standard-console-appender -->
+        <Console name="appender-console-all" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+
+        <!-- the appender for server logs -->
+        <!-- Change it to rotating file -->
+    </Appenders>
+
+
+    <Loggers>
+        <!-- Every configuration must have a root logger. If one is not configured the default root LoggerConfig is ERROR with Console appender attached. -->
+        <Root level="ALL">
+            <AppenderRef ref="appender-console-all" />
+        </Root>
+
+        <!-- additivity means, that parent-logger (in every case the root-logger) will also get the chance to log this stuff -->
+        <!-- Use root logger
+        <Logger name="server-log" additivity="true" level="ALL">
+            <AppenderRef ref="appender-console-all" level="ALL" />
+        </Logger>
+        -->
+    </Loggers>
+</Configuration>
